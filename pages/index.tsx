@@ -15,16 +15,13 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }: any) {
   return (
     <Layout>
-      <p>[Your Self Introduction]</p>
       <section>
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Blog
-        </h1>
         <ul>
           {allPostsData.map(({ id, date, title }: any) => (
-            <li key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
+            <li key={id} className="mb-12">
+              <h2>
+                <Link href={`/posts/${id}`}>{title}</Link>
+              </h2>
               <small>
                 <Date dateString={date} />
               </small>

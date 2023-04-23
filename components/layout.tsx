@@ -5,10 +5,19 @@ const name = "Pieter Rees";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <>
-      <Link href={`/`}>Home</Link>
-
-      <main className="container mx-auto">{children}</main>
-    </>
+    <div className="container mx-auto text-black text-tahiti">
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-2 p-8">
+          <ul>
+            <li className="text-xl">
+              <Link href={`/`}>Home</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="col-span-9 p-8">
+          <main>{children}</main>
+        </div>
+      </div>
+    </div>
   );
 }
