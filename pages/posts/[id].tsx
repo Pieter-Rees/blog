@@ -37,18 +37,20 @@ export default function Post({ postData }) {
         <main>
           <h2 className="mt-0">{postData.title}</h2>
           <hr />
-          <div className="my-4">
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div className="my-6">
+            <div
+              className="prose lg:prose-lg"
+              dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+            />
           </div>
 
           <hr />
-          <p>
+          <p className="mt-6">
             <Date dateString={postData.date} />
           </p>
         </main>
-        <Headline />
 
-        <div className="-ml-4">
+        <div className="-ml-3">
           <Provider apiKey={process.env.NEXT_PUBLIC_LIKE_API_KEY}>
             <LikeButton namespace={postData.id} id="everybody-like-now" />
           </Provider>
