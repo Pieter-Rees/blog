@@ -1,5 +1,5 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData } from "../../components/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import { Provider, LikeButton } from "@lyket/react";
